@@ -1,0 +1,151 @@
+@import style-baselines
+// LET THERE BE JUSTICE
+
+//      *** ANIMATION SYNTAX ***
+
+// .animation
+      animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction] [fill-mode] [play-state]
+
+        *** REAL WORLD EXAMPLE ***
+
+// .animation
+      animation: animationName 2s linear 0s infinite normal forwards paused
+
+
+body
+  padding: 50px
+::selection
+  background: none
+.box
+  display: inline-block
+  background: pink
+  width: 200px
+  height: 200px
+  position: relative
+  animation: myframes 2s ease-in-out infinite
+  &.is-paused
+    animation-play-state: paused 
+
+@keyframes myframes
+  0%
+    height: 100px
+  30%, 100%
+    width: 200px
+    height: 250px
+  70%
+    height: 300px
+    background: orange
+
+.box2
+  display: inline-block
+  background: pink
+  width: 30px
+  height: 30px
+  animation: appear 500ms ease-in-out 1 normal
+  &.is-pressed
+    animation-play-state: paused 
+
+
+@keyframes appear
+  0%
+    transform: scale(0) rotate(30deg)
+    opacity: 0
+  100%
+    transform: scale(1) rotate(0deg)
+    opacity: 1
+// property 
+// duration
+// timing function e.g ease
+// delay
+.grey-cube
+  position: relative
+  top: 75px
+  left: 20px
+  width: 200px
+  height: 200px
+  border: 20px solid grey
+  .pink-cube
+    display: inline-block
+    background: pink
+    width: 100px
+    height: 100px
+    transition: transform 300ms cubic-bezier(0,.47,.32,1.97)
+    pointer-events: none
+    
+.grey-cube.clicked .pink-cube
+  transform: translate(200px, 150px) rotate(20deg)
+
+// ********************************************************
+
+.dark-green-cube
+  position: relative
+  left: 50px
+  top: 100px
+  width: 200px
+  height: 200px
+  border: 20px solid desaturate(green, 85%)
+  
+.yel-cube
+  position: relative
+  left: 350px
+  top: -100px
+  width: 100px
+  height: 100px
+  border: 20px solid desaturate(yellow, 15%)
+// ********************************************************
+
+.tom-cube
+  border: 1px solid adjust-hue(tomato, 20%) 
+  width: 100px
+  height: 100px
+  position: absolute
+  left: 300px
+  top: 115px
+  // pointer-events: none
+.cyan-cube
+  border: 1px solid adjust-hue(cyan, 20%) 
+  width: 100px
+  height: 20px
+  position: absolute
+  left: 400px
+  top: 130px
+  
+.circle
+  border-radius: 50%
+  height: 30px
+  width: 30px
+  margin: 10px
+.circle0
+  background: paleturquoise 
+.circle1
+  background: salmon
+.circle2
+  background: lightskyblue
+.circle3
+  background: khaki
+.circle4
+  background: mediumturquoise
+.circle5
+  background: thistle
+
+
+// ********************************************************
+//  PAGE 2
+// ********************************************************
+
+
+
+
+
+
+//   animation: drop 0.5s ease-in-out forwards  
+
+// @keyframes drop
+//   0%
+//     transform: translateY(-215px)
+//   70% 
+//     transform: translateY(135px)
+//   100% 
+//     transform: translateY(120px)
+
+
